@@ -259,12 +259,13 @@ class SoftwareUpdatePlugin(octoprint.plugin.BlueprintPlugin,
 
 		return {
 			"checks": {
+                # STELLAMOVE
 				"octoprint": {
 					"type": "github_release",
-					"user": "foosel",
-					"repo": "OctoPrint",
+					"user": "joonghochoe",
+					"repo": "stellaRasGUpload",
 					"method": "pip",
-					"pip": "https://github.com/foosel/OctoPrint/archive/{target_version}.zip",
+					"pip": "https://github.com/joonghochoe/OctoPrint/stellaRasGUpload/{target_version}.zip",
 					"update_script": default_update_script,
 					"restart": "octoprint",
 					"stable_branch": dict(branch="master", commitish=["master"], name="Stable"),

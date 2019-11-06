@@ -1671,7 +1671,8 @@ class Server(object):
 		base_path = os.path.realpath(os.path.join(os.path.dirname(__file__), "..", "static"))
 		rules = [
 			("/", ["intermediary.html",], "text/html"),
-			("/favicon.ico", ["img", "tentacle-20x20.png"], "image/png"),
+            # STELLAMOVE
+			("/favicon.ico", ["img", "stella-20x20.png"], "image/png"),
 			("/intermediary.gif", bytes(base64.b64decode("R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7")), "image/gif")
 		]
 

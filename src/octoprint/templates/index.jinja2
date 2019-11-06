@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title data-bind="text: title">OctoPrint</title>
+        <!-- STELLAMOVE -->
+        <title data-bind="text: title">{{ _('Uploader') }}</title>
 
-        <link rel="shortcut icon" href="{{ url_for('static', filename='img/tentacle-32x32.png') }}">
+        <link rel="shortcut icon" href="{{ url_for('static', filename='img/stella-32x32.png') }}">
         <link rel="mask-icon" href="{{ url_for('static', filename='img/mask.svg') }}" color="#56BE37">
         <link rel="mask-icon-theme" href="{{ url_for('static', filename='img/mask-theme.svg') }}" color="#56BE37">
         <link rel="apple-touch-icon" sizes="114x114" href="{{ url_for('static', filename='img/apple-touch-icon-114x114.png') }}">
@@ -20,7 +21,8 @@
             <div id="navbar" class="navbar navbar-static-top">
                 <div class="navbar-inner" data-bind="css: appearanceClasses">
                     <div class="container">
-                        <a class="brand" href="javascript:void(0)" data-bind="attr: {title: appearance.fullbrand}"><span data-bind="text: appearance.brand">OctoPrint</span></a>
+                        <!-- STELLAMOVE -->
+                        <a class="brand" href="javascript:void(0)" data-bind="attr: {title: appearance.fullbrand}"><span data-bind="text: appearance.brand">{{ _('Uploader') }}</span></a>
                         <div class="nav-collapse">
                             <!-- Navbar -->
                             <ul class="nav pull-right">
@@ -111,6 +113,7 @@
                     </div>
                     {% endif %}
                 </div>
+                {#
                 <div class="footer">
                     <ul id="footer_version" class="pull-left muted">
                         <li><small>{{ _('OctoPrint') }} <span class="version">{{ display_version|e }}</span></small></li>
@@ -123,6 +126,7 @@
                         <li id="footer_about"><a href="javascript:void(0)" data-bind="click: show"><i class="fa fa-info-circle"></i> {{ _('About') }}</a></li>
                     </ul>
                 </div>
+                #}
             </div>
 
             <!-- Dialogs -->

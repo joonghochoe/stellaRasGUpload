@@ -49,6 +49,12 @@ _APPNAME = "OctoPrint"
 
 _instance = None
 
+# STELLAMOVE
+if sys.platform.startswith('linux'):
+	DEFAULT_UPLOADFOLDER = os.path.expanduser(os.path.join("~", "Gdatas", "uploads"))
+else:
+	DEFAULT_UPLOADFOLDER = None
+
 def settings(init=False, basedir=None, configfile=None):
 	"""
 	Factory method for initially constructing and consecutively retrieving the :class:`~octoprint.settings.Settings`
@@ -87,14 +93,16 @@ def settings(init=False, basedir=None, configfile=None):
 default_settings = {
 	"serial": {
 		"port": None,
-		"baudrate": None,
+		# STELLAMOVE
+		"baudrate": 115200,
 		"exclusive": True,
 		"autoconnect": False,
 		"log": False,
 		"timeout": {
 			"detection": 1,
-			"connection": 10,
-			"communication": 30,
+			# STELLAMOVE
+			"connection": 120,
+			"communication": 120,
 			"communicationBusy": 3,
 			"temperature": 5,
 			"temperatureTargetSet": 2,
@@ -188,9 +196,10 @@ default_settings = {
 		},
 		"maxSize": 100 * 1024, # 100 KB
 		"commands": {
-			"systemShutdownCommand": None,
-			"systemRestartCommand": None,
-			"serverRestartCommand": None
+			# STELLAMOVE
+			"systemShutdownCommand": "sudo shutdown -h now",
+			"systemRestartCommand": "sudo shutdown -r now",
+			"serverRestartCommand": "sudo service octoprint restart"
 		},
 		"onlineCheck": {
 			"enabled": None,
@@ -198,8 +207,9 @@ default_settings = {
 			"host": "8.8.8.8",
 			"port": 53
 		},
+		# STELLAMOVE
 		"pluginBlacklist": {
-			"enabled": None,
+			"enabled": False,
 			"url": "https://plugins.octoprint.org/blacklist.json",
 			"ttl": 15 * 60 # 15 min
 		},
@@ -231,7 +241,7 @@ default_settings = {
 		"watermark": True,
 		"flipH": False,
 		"flipV": False,
-		"rotate90" : False,
+		"rotate90": False,
 		"timelapse": {
 			"type": "off",
 			"options": {},
@@ -240,8 +250,9 @@ default_settings = {
 		},
 		"cleanTmpAfterDays": 7
 	},
+	# STELLAMOVE
 	"gcodeViewer": {
-		"enabled": True,
+		"enabled": False,
 		"mobileSizeThreshold": 2 * 1024 * 1024, # 2MB
 		"sizeThreshold": 20 * 1024 * 1024, # 20MB
 	},
@@ -252,18 +263,22 @@ default_settings = {
 		"throttle_lines": 100
 	},
 	"feature": {
-		"temperatureGraph": True,
-		"sdSupport": True,
+		# STELLAMOVE
+		"temperatureGraph": False,
+		# STELLAMOVE
+		"sdSupport": False,
 		"keyboardControl": True,
 		"pollWatched": False,
-		"modelSizeDetection": True,
+		# STELLAMOVE
+		"modelSizeDetection": False,
 		"printStartConfirmation": False,
 		"printCancelConfirmation": True,
 		"autoUppercaseBlacklist": ["M117", "M118"],
 		"g90InfluencesExtruder": False
 	},
 	"folder": {
-		"uploads": None,
+		# STELLAMOVE
+		"uploads": DEFAULT_UPLOADFOLDER,
 		"timelapse": None,
 		"timelapse_tmp": None,
 		"logs": None,
@@ -279,8 +294,9 @@ default_settings = {
 	},
 	"temperature": {
 		"profiles": [
-			{"name": "ABS", "extruder" : 210, "bed" : 100 },
-			{"name": "PLA", "extruder" : 180, "bed" : 60 }
+			# STELLAMOVE
+			{"name": "ABS", "extruder": 230, "bed": 60},
+			{"name": "PLA", "extruder": 200, "bed": 40}
 		],
 		"cutoff": 30,
 		"sendAutomatically": False,
@@ -298,12 +314,14 @@ default_settings = {
 		"color": "default",
 		"colorTransparent": False,
 		"colorIcon": True,
-		"defaultLanguage": "_default",
+		# STELLAMOVE
+		"defaultLanguage": "ko",
 		"showFahrenheitAlso": False,
 		"fuzzyTimes": True,
 		"closeModalsWithClick": True,
 		"components": {
 			"order": {
+				# STELLAMOVE
 				"navbar": ["settings", "systemmenu", "plugin_announcements", "plugin_pi_support", "login"],
 				"sidebar": ["plugin_printer_safety_check", "connection", "state", "files"],
 				"tab": ["temperature", "control", "gcodeviewer", "terminal", "timelapse"],
@@ -347,8 +365,9 @@ default_settings = {
 		"remoteUserHeader": "REMOTE_USER",
 		"addRemoteUsers": False
 	},
+	# STELLAMOVE
 	"slicing": {
-		"enabled": True,
+		"enabled": False,
 		"defaultSlicer": None,
 		"defaultProfiles": None
 	},
@@ -369,14 +388,9 @@ default_settings = {
 	"plugins": {
 		"_disabled": []
 	},
+	# STELLAMOVE
 	"scripts": {
-		"gcode": {
-			"afterPrintCancelled": "; disable motors\nM84\n\n;disable all heaters\n{% snippet 'disable_hotends' %}\n{% snippet 'disable_bed' %}\n;disable fan\nM106 S0",
-			"snippets": {
-				"disable_hotends": "{% if printer_profile.extruder.sharedNozzle %}M104 T0 S0\n{% else %}{% for tool in range(printer_profile.extruder.count) %}M104 T{{ tool }} S0\n{% endfor %}{% endif %}",
-				"disable_bed": "{% if printer_profile.heatedBed %}M140 S0\n{% endif %}"
-			}
-		}
+		"gcode": {}
 	},
 	"estimation": {
 		"printTime": {
@@ -432,7 +446,8 @@ default_settings = {
 			"preparedOks": [],
 			"okFormatString": "ok",
 			"m115FormatString": "FIRMWARE_NAME:{firmware_name} PROTOCOL_VERSION:1.0",
-			"m115ReportCapabilities": True,
+			# STELLAMOVE
+			"m115ReportCapabilities": False,
 			"capabilities": {
 				"AUTOREPORT_TEMP": True,
 				"AUTOREPORT_SD_STATUS": True,

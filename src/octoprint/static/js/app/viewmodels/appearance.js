@@ -93,24 +93,27 @@ $(function() {
         updateIcon();
 
         self.brand = ko.pureComputed(function() {
+            // STELLAMOVE
             if (self.name())
                 return self.name();
             else
-                return gettext("OctoPrint");
+                return gettext("Uploader");
         });
 
         self.fullbrand = ko.pureComputed(function() {
+            // STELLAMOVE
             if (self.name())
-                return gettext("OctoPrint") + ": " + self.name();
+                return gettext("Uploader") + ": " + self.name();
             else
-                return gettext("OctoPrint");
+                return gettext("Uploader");
         });
 
         self.title = ko.pureComputed(function() {
+            // STELLAMOVE
             if (self.name())
-                return self.name() + " [" + gettext("OctoPrint") + "]";
+                return self.name() + " [" + gettext("Uploader") + "]";
             else
-                return gettext("OctoPrint");
+                return gettext("Uploader");
         });
     }
 

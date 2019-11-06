@@ -914,8 +914,8 @@ $(function() {
             if (self.ignoreUpdatedFilesEvent) {
                 return;
             }
-
-            if (payload.type !== "printables") {
+            // STELLAMOVE
+            if (payload.type !== "g4rcode") {
                 return;
             }
 
