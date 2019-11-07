@@ -429,6 +429,7 @@ function bytesFromSize(size) {
     return number * factor;
 }
 
+// STELLAMOVE
 function formatHash(hash) {
     if (!hash) return "-";
 
