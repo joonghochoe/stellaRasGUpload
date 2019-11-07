@@ -228,11 +228,12 @@ class PrinterProfileManager(object):
 			count = 2,
 			offsets = [
 				(0, 0),
-				(0, 0)
+				(18, 0)
 			],
 			nozzleDiameter = 0.6,
 			sharedNozzle = False
 		),
+		# STELLAMOVE
 		axes=dict(
 			x = dict(speed=12000, inverted=False),
 			y = dict(speed=12000, inverted=False),

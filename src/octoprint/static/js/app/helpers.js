@@ -429,6 +429,12 @@ function bytesFromSize(size) {
     return number * factor;
 }
 
+function formatHash(hash) {
+    if (!hash) return "-";
+
+    return hash;
+}
+
 function formatDuration(seconds) {
     if (!seconds) return "-";
     if (seconds < 1) return "00:00:00";

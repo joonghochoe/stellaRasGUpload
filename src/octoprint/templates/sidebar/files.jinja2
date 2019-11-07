@@ -19,11 +19,12 @@
         <div class="internal" data-bind="visible: display && name != display">{{ _('Internal') }}: <span data-bind="text: name"></span></div>
         <div class="uploaded">{{ _('Uploaded') }}: <span data-bind="text: formatTimeAgo(date), attr: {title: formatDate(date)}"></span></div>
         <div class="size">{{ _('Size') }}: <span data-bind="text: formatSize(size)"></span></div>
+        {# STELLAMOVE #}
+        <div class="hash">{{ _('Hash') }}: <span data-bind="text: formatHash(hash)"></span></div>
         <div class="additionalInfo hide" data-bind="html: $root.getAdditionalData($data)"></div>
         <div class="btn-group action-buttons">
-            {# STELLAMOVE
+            {# STELLAMOVE #}
             <div class="btn btn-mini toggleAdditionalData" data-bind="click: function() { if ($root.enableAdditionalData($data)) { $root.toggleAdditionalData($data); } else { return; } }, css: { disabled: !$root.enableAdditionalData($data) }" title="{{ _('Additional data')|edq }}"><i class="fa fa-chevron-down"></i></div>
-            #}
             <a class="btn btn-mini" data-bind="attr: {href: $root.downloadLink($data)}, css: {disabled: !$root.downloadLink($data)}" title="{{ _('Download')|edq }}"><i class="fa fa-download"></i></a>
             <div class="btn btn-mini" data-bind="click: function(data, event) { if ($root.enableRemove($data)) { $root.removeFile($data, event); } else { return; } }, css: {disabled: !$root.enableRemove($data)}" title="{{ _('Remove')|edq }}"><i class="fa fa-trash-o"></i></div>
             {# STELLAMOVE
@@ -38,6 +39,7 @@
         <div class="internal" data-bind="visible: name != display">{{ _('Internal') }}: <span data-bind="text: name"></span></div>
         <div class="uploaded">{{ _('Uploaded') }}: <span data-bind="text: formatTimeAgo(date), attr: {title: formatDate(date)}"></span></div>
         <div class="size">{{ _('Size') }}: <span data-bind="text: formatSize(size)"></span></div>
+        <div class="hash">{{ _('Hash') }}: <span data-bind="text: formatHash(hash)"></span></div>
         <div class="btn-group action-buttons">
             <a class="btn btn-mini" data-bind="attr: {href: $root.downloadLink($data), css: {disabled: !$root.downloadLink($data)}}" title="{{ _('Download')|edq }}"><i class="fa fa-download"></i></a>
             <div class="btn btn-mini" data-bind="click: function(data, event) { if ($root.enableRemove($data)) { $root.removeFile($data, event); } else { return; } }, css: {disabled: !$root.enableRemove($data)}" title="{{ _('Remove')|edq }}"><i class="fa fa-trash-o"></i></div>

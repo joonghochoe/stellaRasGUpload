@@ -1,6 +1,6 @@
-#  RasGUploader for Stellamove
+#  stellaRasGUpload for Stellamove
 
-RasGUploader provides a snappy web interface for uploading 3d printer machine code. It is Free Software
+stellaRasGUpload provides a snappy web interface for uploading 3d printer machine code. It is Free Software
 and released under the [GNU Affero General Public License V3](http://www.gnu.org/licenses/agpl.html).
 
 This is basically intended to use OctoPrint's File Manager only, but it will gradually expand its functionality.

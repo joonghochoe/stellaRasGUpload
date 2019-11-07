@@ -232,7 +232,7 @@ class EventManager(object):
 			# TODO v1.4.0 Remove again
 			import copy
 			legacy_payload = copy.deepcopy(payload)
-            # STELLAMOVE
+			# STELLAMOVE
 			legacy_payload["type"] = "g4rcode"
 			q.put((event, legacy_payload))
 

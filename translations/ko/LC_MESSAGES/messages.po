@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: StellaRasPrint\n"
 "Report-Msgid-Bugs-To: i18n@octoprint.org\n"
 "POT-Creation-Date: 2018-07-25 13:37+0200\n"
-"PO-Revision-Date: 2019-11-06 16:36+0900\n"
+"PO-Revision-Date: 2019-11-07 14:24+0900\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -4640,6 +4640,11 @@ msgstr "내부"
 #: src/octoprint/templates/sidebar/files.jinja2:32
 msgid "Uploaded"
 msgstr "업로드 완료"
+
+#: src/octoprint/templates/sidebar/files.jinja2:22
+#: src/octoprint/templates/sidebar/files.jinja2:41
+msgid "Hash"
+msgstr "해쉬"
 
 #: src/octoprint/templates/sidebar/files.jinja2:21
 msgid "Additional data"

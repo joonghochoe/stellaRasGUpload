@@ -915,7 +915,7 @@ $(function() {
                 return;
             }
             // STELLAMOVE
-            if (payload.type !== "g4rcode") {
+            if (payload.type !== "printables") {
                 return;
             }
 
