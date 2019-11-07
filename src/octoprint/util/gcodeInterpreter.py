@@ -342,11 +342,11 @@ class gcode(object):
 						                                    totalExtrusion[currentExtruder])
 
 						if currentExtruder == 0 and len(currentE) > 1 and duplicationMode:
- 							# Copy first extruder length to other extruders
- 							for i in range(1, len(currentE)):
- 								totalExtrusion[i] += e
- 								currentE[i] += e
- 								maxExtrusion[i] = max(maxExtrusion[i],
+							# Copy first extruder length to other extruders
+							for i in range(1, len(currentE)):
+								totalExtrusion[i] += e
+								currentE[i] += e
+								maxExtrusion[i] = max(maxExtrusion[i],
  						                          totalExtrusion[i])
 					else:
 						e = 0.0
@@ -436,13 +436,13 @@ class gcode(object):
 						else:
 							fwrecoverTime = (fwretractDist + s) / f
 				elif M == 605:	#Duplication/Mirroring mode
- 					s = getCodeInt(line, 'S')
- 					if s in [2, 4, 5, 6]:
- 						# Duplication / Mirroring mode selected. Printer firmware copies extrusion commands
+					s = getCodeInt(line, 'S')
+					if s in [2, 4, 5, 6]:
+						# Duplication / Mirroring mode selected. Printer firmware copies extrusion commands
  						# from first extruder to all other extruders
  						duplicationMode = True
- 					else:
- 						duplicationMode = False
+					else:
+						duplicationMode = False
 
 			elif T is not None:
 				if T > max_extruders:
