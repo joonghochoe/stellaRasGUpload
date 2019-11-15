@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: StellaRasPrint\n"
 "Report-Msgid-Bugs-To: i18n@octoprint.org\n"
 "POT-Creation-Date: 2018-07-25 13:37+0200\n"
-"PO-Revision-Date: 2019-11-15 15:56+0900\n"
+"PO-Revision-Date: 2019-11-15 17:25+0900\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -1135,18 +1135,6 @@ msgstr ""
 "우저</strong> 에서\n"
 "    연결할 수 있어야 합니다.\n"
 "</p><p>\n"
-"    It may be\n"
-"    <ul>\n"
-"        <li>a fully qualified URL (<code>http://host:port/path</code>),</"
-"li>\n"
-"        <li>a URL defaulting to the protocol used for accessing the web\n"
-"            interface (e.g. <code>//host:port/path</code>),</li>\n"
-"        <li>an absolute path on the same host as OctoPrint (e.g. <code>/"
-"absolute/path</code>) or</li>\n"
-"        <li>a relative path on the same host as OctoPrint (e.g. "
-"<code>relative/path</code>)</li>\n"
-"    </ul>\n"
-"</p><p>\n"
 "    <strong>스냅 샷 URL </strong>은 시간 경과 기록을 만들기 위해 웹캠에"
 "서\n"
 "    단일 이미지를 가져 오는 데 사용하는 URL입니다. 이것은 <strong>서버</"
@@ -1206,90 +1194,71 @@ msgstr ""
 msgid "Ignore"
 msgstr "무시"
 
-#: src/octoprint/plugins/cura/templates/cura_wizard.jinja2:28
+#: src/octoprint/plugins/errortracking/static/js/errortracking.js:51
+msgid ""
+"You can still enable error tracking via \"Settings\" > \"Error Tracking\""
+msgstr ""
+"\"설정\"> \"오류 추적\"을 통해 오류 추적을 계속 활성화할 수 있습니다."
+
+#: src/octoprint/plugins/errortracking/static/js/errortracking.js:59
+msgid "Enable"
+msgstr "사용"
+
+#: src/octoprint/plugins/errortracking/templates/errortracking_settings.jinja2:3
 msgid ""
 "\n"
-"            <strong>Don't know where to get a profile?</strong> In order "
-"to export\n"
-"            a slicing profile from the Cura desktop UI up to and "
-"including version 15.04.06 (not versions\n"
-"            2.1 and later which are actually newer than 15.04), open it, "
-"set up your profile, then click\n"
-"            on \"File\" and there on \"Save Profile\". You can import the "
-"<code>.ini</code> file this creates\n"
-"            via the \"Import Profile\" button.\n"
-"        "
+"<p>\n"
+"    Error tracking will cause any logged exceptions in the server and the "
+"browser interface to be sent\n"
+"    to OctoPrint's <a href=\"https://sentry.io/\" target=\"_blank\" rel="
+"\"noopener noreferer\">Sentry instance</a>.\n"
+"</p>\n"
+"<p>\n"
+"    By enabling it you help to gather detailed information on the cause "
+"of bugs or other issues. This is especially valuable\n"
+"    on release candidates, which is why this plugin will also prompt you "
+"to enable error tracking if it detects that\n"
+"    you are subscribed to an RC release channel.\n"
+"</p>\n"
+"<p>\n"
+"    Please enable this if you are running a release candidate, or are "
+"prompted to do so while debugging an issue that you reported.\n"
+"</p>\n"
 msgstr ""
-"\n"
-"           <strong>프로파일을 가져올 위치를 모르십니까?</strong> Cura에"
-"서\n"
-"           버전 15.04.06까지의 슬라이싱 프로파일을 내보내려면, 프로파일을 "
-"열고 \n"
-"           프로파일을 설정한 다음 \"파일\"을 클릭하십시오. \"프로파일 저장"
-"\"을 클릭하십시오.\n"
-"           \"가져 오기 프로파일\" 버튼을 통해 생성한 <code>.ini</code> 파"
-"일을 가져올 수 있습니다.\n"
-"        "
 
-#: src/octoprint/plugins/cura/templates/snippets/settings/cura/engineLog.jinja2:4
-msgid "Log the output of CuraEngine to plugin_cura_engine.log"
-msgstr "슬라이서의 출력을 plugin_cura_engine.log에 기록합니다"
+#: src/octoprint/plugins/errortracking/templates/errortracking_settings.jinja2:22
+msgid "Enable error tracking"
+msgstr "오류 추적 활성화"
 
-#: src/octoprint/plugins/cura/templates/snippets/settings/cura/enginePath.jinja2:2
-msgid "Path to CuraEngine"
-msgstr "CuraEngine 경로"
+#: src/octoprint/plugins/errortracking/templates/errortracking_settings.jinja2:24
+msgid "Please reload the page after enabling/disabling & saving"
+msgstr "활성화/비활성화 및 저장 후 페이지를 다시 로드하십시오"
 
-#: src/octoprint/plugins/cura/templates/snippets/settings/cura/profileImporter.jinja2:4
-msgid "Import Existing Cura Profile"
-msgstr "기존 Cura 프로파일 가져오기"
+#: src/octoprint/plugins/errortracking/templates/errortracking_settings.jinja2:28
+#: src/octoprint/plugins/tracking/templates/tracking_settings.jinja2:14
+msgid "Random unique instance ID"
+msgstr "임의의 특수한 인스턴스 ID"
 
-#: src/octoprint/plugins/cura/templates/snippets/settings/cura/profileImporter.jinja2:9
-msgid "Profile ini file"
-msgstr "프로파일 파이"
+#: src/octoprint/plugins/errortracking/templates/errortracking_settings.jinja2:28
+#: src/octoprint/plugins/tracking/templates/tracking_settings.jinja2:14
+msgid "Instance ID"
+msgstr "인스턴스 ID"
 
-#: src/octoprint/plugins/cura/templates/snippets/settings/cura/profileImporter.jinja2:33
-msgid "Description"
-msgstr "설명"
-
-#: src/octoprint/plugins/cura/templates/snippets/settings/cura/profileImporter.jinja2:41
-msgid "Make default profile"
-msgstr "기본 프로파일로 설정"
-
-#: src/octoprint/plugins/cura/templates/snippets/settings/cura/profileImporter.jinja2:48
-msgid "Overwrite existing file"
-msgstr "기존 파일 덮어 쓰기"
-
-#: src/octoprint/plugins/cura/templates/snippets/settings/cura/profileImporter.jinja2:53
+#: src/octoprint/plugins/errortracking/templates/errortracking_settings.jinja2:35
 msgid ""
 "\n"
-"            You can import your existing profile <code>.ini</code> files "
-"from <strong>Cura 15.04.x or older</strong>\n"
-"            here. Anything but those are <strong>not supported</strong>. "
-"That especially means that <code>.json</code>\n"
-"            profiles from Cura 15.06.x and <code>.curaprofile</code> "
-"profiles from Cura 2.x will not work, and neither\n"
-"            will custom Cura profile formats that third party tools like "
-"e.g. Repetier create.\n"
-"        "
+"<p>\n"
+"    The Error Tracking plugin is using a Sentry instance kindly provided "
+"by\n"
+"    <a href=\"https://sentry.io/\" target=\"_blank\" rel=\"noopener "
+"noreferer\">sentry.io</a>. For information on their service\n"
+"    please refer to their <a href=\"https://sentry.io/security/\" target="
+"\"_blank\" rel=\"noopener noreferer\">Security & Compliance "
+"documentation</a>\n"
+"    and their <a href=\"https://sentry.io/privacy/\" target=\"_blank\" "
+"rel=\"noopener noreferer\">Privacy Policy</a>.\n"
+"</p>\n"
 msgstr ""
-"\n"
-"            <strong>Cura 15.04.x 또는 이전 버전</strong>에서 기존 프로파"
-"일 <code>.ini</code>을 가져올\n"
-"            수 있습니다. 그 이외의 것은 <strong>지원되지 않습니다</"
-"strong>. Cura 2.x의 <code>.curaprofile</code> 및\n"
-"            Cura 15.06.x의 <code>.json</code> 프로파일은 작동하지 않으며 "
-"타사 도구와 같은 사용자지정 Cura \n"
-"            프로파일도 작동하지 않습니다.\n"
-"        "
-
-#: src/octoprint/plugins/cura/templates/snippets/settings/cura/profiles.jinja2:3
-#: src/octoprint/plugins/logging/templates/logging_settings.jinja2:5
-msgid "Sort by"
-msgstr "정렬"
-
-#: src/octoprint/plugins/cura/templates/snippets/settings/cura/profiles.jinja2:18
-msgid "Make default"
-msgstr "기본"
 
 #: src/octoprint/plugins/forcelogin/__init__.py:190
 msgid ""
@@ -2333,11 +2302,23 @@ msgid ""
 msgstr ""
 "출력 작업이 진행 중입니다. 업데이트가 완료될 때까지 업데이트가 중지됩니다."
 
-#: src/octoprint/plugins/softwareupdate/static/js/softwareupdate.js:488
+#: src/octoprint/plugins/softwareupdate/static/js/softwareupdate.js:501
+msgid "Can't update while throttled"
+msgstr "스로틀동안 업데이트 불가능"
+
+#: src/octoprint/plugins/softwareupdate/static/js/softwareupdate.js:502
+msgid ""
+"Your system is currently throttled. OctoPrint refuses to run updates "
+"while in this state due to possible stability issues."
+msgstr ""
+"시스템이 현재 제한되어 있습니다. 서버는 안정성 문제로 인해 이 상태에서 업"
+"데이트 실행을 거부합니다."
+
+#: src/octoprint/plugins/softwareupdate/static/js/softwareupdate.js:509
 msgid "This will update the following components and restart the server:"
 msgstr "이렇게 하면 다음 구성 요소가 업데이트되고 서버가 다시 시작됩니다:"
 
-#: src/octoprint/plugins/softwareupdate/static/js/softwareupdate.js:499
+#: src/octoprint/plugins/softwareupdate/static/js/softwareupdate.js:520
 msgid ""
 "Be sure to read through any linked release notes, especially those for "
 "OctoPrint since they might contain important information you need to know "
@@ -2381,17 +2362,17 @@ msgstr "%(name)s를 %(version)s으로 업데이트 중입니다"
 msgid "Update successful, restarting!"
 msgstr "업데이트 성공, 다시 시작!"
 
-#: src/octoprint/plugins/softwareupdate/static/js/softwareupdate.js:660
+#: src/octoprint/plugins/softwareupdate/static/js/softwareupdate.js:679
 msgid ""
 "The update finished successfully and the server will now be restarted."
 msgstr "업데이트가 성공적으로 완료되고 서버가 이제 다시 시작됩니다."
 
-#: src/octoprint/plugins/softwareupdate/static/js/softwareupdate.js:677
-#: src/octoprint/plugins/softwareupdate/static/js/softwareupdate.js:726
+#: src/octoprint/plugins/softwareupdate/static/js/softwareupdate.js:696
+#: src/octoprint/plugins/softwareupdate/static/js/softwareupdate.js:745
 msgid "Restart failed"
 msgstr "재시작 실패"
 
-#: src/octoprint/plugins/softwareupdate/static/js/softwareupdate.js:678
+#: src/octoprint/plugins/softwareupdate/static/js/softwareupdate.js:697
 msgid ""
 "The server apparently did not restart by itself, you'll have to do it "
 "manually. Please consult octoprint.log on what went wrong."
@@ -2419,7 +2400,7 @@ msgstr ""
 "서버를 다시 시작하지 못했습니다. 당신은 또한 무엇이 잘못되었는지 상담을 "
 "할 수 있습니다."
 
-#: src/octoprint/plugins/softwareupdate/static/js/softwareupdate.js:723
+#: src/octoprint/plugins/softwareupdate/static/js/softwareupdate.js:742
 msgid ""
 "Rebooting the server failed, please reboot it manually. You might also "
 "want to consult octoprint.log on what went wrong here."
@@ -2516,8 +2497,8 @@ msgstr ""
 "</p>\n"
 "<p>\n"
 "오래된 환경에서 업데이트 문제가 발생할 가능성을 줄이기위해 이 업데이트 프"
-"로그램을 사용하여 OctoPrint 또는 설치된 플러그인을 업데이트하려면 다음의 "
-"최소한의 버전이 필요합니다. \n"
+"로그램을 사용하여 서버 또는 설치된 플러그인을 업데이트하려면 다음의 최소한"
+"의 버전이 필요합니다. \n"
 "</p>\n"
 
 #: src/octoprint/plugins/softwareupdate/templates/softwareupdate_settings.jinja2:28
@@ -2539,7 +2520,39 @@ msgstr ""
 "target=\"_blank\">이 FAQ 항목이 어떻게 진행중인지</a>확인해보세요\n"
 "</p>\n"
 
-#: src/octoprint/plugins/softwareupdate/templates/softwareupdate_settings.jinja2:40
+#: src/octoprint/plugins/softwareupdate/templates/softwareupdate_settings.jinja2:35
+msgid ""
+"\n"
+"    <p>\n"
+"        <strong>OctoPrint is running on a throttled system, updates are "
+"disabled.</strong>\n"
+"    </p>\n"
+"    <p>\n"
+"        To reduce the likelihood of running into update problems on "
+"throttled and hence potentially unstable systems\n"
+"        as seen in the past, OctoPrint doesn't support updating under "
+"such conditions. Please fix the current issue\n"
+"        before trying to update. Take a look at the displayed warning in "
+"the navigation bar to learn about what is\n"
+"        wrong and to get hints on how to solve the problem.\n"
+"    </p>\n"
+msgstr ""
+
+#: src/octoprint/plugins/softwareupdate/templates/softwareupdate_settings.jinja2:46
+msgid ""
+"\n"
+"    <p>\n"
+"        <strong>OctoPrint is currently printing, updates are disabled.</"
+"strong>\n"
+"    </p>\n"
+"    <p>\n"
+"        Running updates is not supported while printing in order to not "
+"risk any kind of disruption to the print job.\n"
+"        Please let the print finish before trying to update.\n"
+"    </p>\n"
+msgstr ""
+
+#: src/octoprint/plugins/softwareupdate/templates/softwareupdate_settings.jinja2:60
 msgid "Current versions"
 msgstr "현재 버전"
 
@@ -2591,7 +2604,7 @@ msgstr "버전 캐시 TTL"
 msgid "Show update notifications to users"
 msgstr "사용자에게 업데이트 알림 표시"
 
-#: src/octoprint/plugins/softwareupdate/templates/softwareupdate_settings.jinja2:114
+#: src/octoprint/plugins/softwareupdate/templates/softwareupdate_settings.jinja2:119
 msgid ""
 "If you uncheck this, only logged in admins will see update notifications. "
 "Update notifications shown to users do not include the \"Update now\" "
@@ -2680,7 +2693,7 @@ msgstr "익명 사용기록 추적"
 msgid "Please set up anonymous usage tracking"
 msgstr "익명 사용기록 추적을 설정해주세요"
 
-#: src/octoprint/plugins/tracking/static/js/usage.js:58
+#: src/octoprint/plugins/tracking/static/js/usage.js:54
 msgid ""
 "You haven't yet decided on whether to enable or disable anonymous usage "
 "tracking. You need to either enable or disable it before continuing."
@@ -2688,7 +2701,7 @@ msgstr ""
 "아직 익명 사용기록 추적을 활성화할지 비활성화할지 정하지 않았습니다. 계속"
 "하려면 활성화 또는 비활성화를 선택해야 합니다."
 
-#: src/octoprint/plugins/tracking/static/js/usage.js:82
+#: src/octoprint/plugins/tracking/static/js/usage.js:78
 #, python-format
 msgid ""
 "Please open a <a href='%(bugreport)s' target='_blank' rel='noopener "
@@ -2705,14 +2718,6 @@ msgstr ""
 msgid "Enable anonymous usage tracking"
 msgstr "익명 사용기록 추적 활성화"
 
-#: src/octoprint/plugins/tracking/templates/tracking_settings.jinja2:14
-msgid "Random unique instance ID"
-msgstr "임의의 특수한 인스턴스 ID"
-
-#: src/octoprint/plugins/tracking/templates/tracking_settings.jinja2:14
-msgid "Instance ID"
-msgstr "인스턴스 ID"
-
 #: src/octoprint/plugins/tracking/templates/tracking_settings.jinja2:20
 msgid "Events to track. The ping is mandatory."
 msgstr "추적할 이벤트. ping은 필수입니다."
@@ -2722,32 +2727,50 @@ msgid "Tracked events"
 msgstr "추적되는 이벤트"
 
 #: src/octoprint/plugins/tracking/templates/tracking_settings.jinja2:23
-msgid "Regular ping"
+msgid "Regular ping every 15min (incl. uptime)"
 msgstr "정규 Ping"
 
 #: src/octoprint/plugins/tracking/templates/tracking_settings.jinja2:26
+msgid "Regular pong every 24h (incl. plugin list)"
+msgstr "24 시간마다 정기적으로 핑 (플러그인 목록 포함)"
+
+#: src/octoprint/plugins/tracking/templates/tracking_settings.jinja2:29
 msgid "Server startup & shutdown"
 msgstr "서버 시작&종료"
 
-#: src/octoprint/plugins/tracking/templates/tracking_settings.jinja2:29
+#: src/octoprint/plugins/tracking/templates/tracking_settings.jinja2:32
 msgid "Connected to printer"
 msgstr "장비에 연결됨"
 
-#: src/octoprint/plugins/tracking/templates/tracking_settings.jinja2:32
+#: src/octoprint/plugins/tracking/templates/tracking_settings.jinja2:35
+msgid "Printer Safety Check warnings"
+msgstr "장비 안전 체크 경고"
+
+#: src/octoprint/plugins/tracking/templates/tracking_settings.jinja2:38
 msgid "Print started/cancelled/finished"
 msgstr "출력 시작/취소/완료"
 
-#: src/octoprint/plugins/tracking/templates/tracking_settings.jinja2:35
+#: src/octoprint/plugins/tracking/templates/tracking_settings.jinja2:41
+msgid ""
+"Errors in the communication with the printer and/or reported by the "
+"firmware"
+msgstr "장비와의 통신 또는 펌웨어에 의해 보고된 오류"
+
+#: src/octoprint/plugins/tracking/templates/tracking_settings.jinja2:44
 msgid "Plugin installed/uninstalled/enabled/disabled"
 msgstr "플러그인 설치/제거/활성화/비활성화"
 
-#: src/octoprint/plugins/tracking/templates/tracking_settings.jinja2:38
+#: src/octoprint/plugins/tracking/templates/tracking_settings.jinja2:47
 msgid "OctoPrint or a plugin updated successfully or unsuccessfully"
 msgstr "서버 또는 플러그인이 성공적으로 업데이트 되었거나 실패함"
 
-#: src/octoprint/plugins/tracking/templates/tracking_settings.jinja2:41
+#: src/octoprint/plugins/tracking/templates/tracking_settings.jinja2:50
 msgid "System got throttled/unthrottled (currently only detected on RPis)"
 msgstr "시스템이 스로틀링/스로틀링 해제됨(현재 RPis에서만 감지됨)"
+
+#: src/octoprint/plugins/tracking/templates/tracking_settings.jinja2:53
+msgid "Onboard slicing actions"
+msgstr ""
 
 #: src/octoprint/plugins/tracking/templates/tracking_wizard.jinja2:1
 msgid "Configure Anonymous Usage Tracking"
@@ -2915,7 +2938,7 @@ msgstr "API"
 
 #: src/octoprint/server/views.py:603
 #: src/octoprint/templates/dialogs/settings/folders.jinja2:2
-#: src/octoprint/templates/sidebar/files_header.jinja2:10
+#: src/octoprint/templates/sidebar/files_header.jinja2:12
 msgid "Folders"
 msgstr "폴더"
 
@@ -2949,7 +2972,7 @@ msgstr "종료"
 msgid "Shutdown system"
 msgstr "시스템 종료"
 
-#: src/octoprint/server/api/system.py:170
+#: src/octoprint/server/api/system.py:186
 msgid ""
 "<strong>You are about to shutdown the system.</strong></p><p>This action "
 "may disrupt any ongoing print jobs (depending on your printer's "
@@ -2959,11 +2982,11 @@ msgstr ""
 "<strong>시스템을 종료하려고합니다.</strong></p><p>이 작업을 수행하면 진행"
 "중인 작업이 중단될 수 있습니다."
 
-#: src/octoprint/server/api/system.py:173
+#: src/octoprint/server/api/system.py:189
 msgid "Reboot system"
 msgstr "시스템 재부팅"
 
-#: src/octoprint/server/api/system.py:174
+#: src/octoprint/server/api/system.py:190
 msgid ""
 "<strong>You are about to reboot the system.</strong></p><p>This action "
 "may disrupt any ongoing print jobs (depending on your printer's "
@@ -2973,12 +2996,12 @@ msgstr ""
 "<strong>시스템을 재부팅하려고합니다.</strong></p><p>이 작업을 수행하면 진"
 "행중인 작업이 중단될 수 있습니다."
 
-#: src/octoprint/server/api/system.py:177
+#: src/octoprint/server/api/system.py:193
 #: src/octoprint/templates/snippets/settings/server/serverCommandServerRestart.jinja2:2
 msgid "Restart OctoPrint"
 msgstr "서버 재시작"
 
-#: src/octoprint/server/api/system.py:178
+#: src/octoprint/server/api/system.py:194
 msgid ""
 "<strong>You are about to restart the OctoPrint server.</strong></"
 "p><p>This action may disrupt any ongoing print jobs (depending on your "
@@ -3420,12 +3443,12 @@ msgstr ""
 #: src/octoprint/static/js/app/viewmodels/printerstate.js:329
 msgid ""
 "This will start a new print job. Please check that the print bed is clear."
-msgstr ""
+msgstr "새 출력 작업이 시작됩니다. 출력판이 깨끗한지 확인하십시오."
 
 #: src/octoprint/static/js/app/viewmodels/files.js:466
 #: src/octoprint/static/js/app/viewmodels/printerstate.js:330
 msgid "Do you want to start the print job now?"
-msgstr ""
+msgstr "지금 출력 작업을 시작하시겠습니까?"
 
 #: src/octoprint/static/js/app/viewmodels/files.js:467
 #: src/octoprint/static/js/app/viewmodels/printerstate.js:331
@@ -4357,7 +4380,7 @@ msgid "After slicing..."
 msgstr "슬라이스 후 ..."
 
 #: src/octoprint/templates/dialogs/slicing.jinja2:58
-#: src/octoprint/templates/sidebar/files.jinja2:37
+#: src/octoprint/templates/sidebar/files.jinja2:40
 msgid "Slice"
 msgstr "슬라이스"
 
@@ -4378,7 +4401,7 @@ msgid "+1"
 msgstr "+1"
 
 #: src/octoprint/templates/dialogs/temperature.jinja2:24
-#: src/octoprint/templates/tabs/temperature.jinja2:57
+#: src/octoprint/templates/tabs/temperature.jinja2:58
 msgid "Delete Offset"
 msgstr "오프셋 삭제"
 
@@ -4500,10 +4523,6 @@ msgid "N/A"
 msgstr "없음"
 
 #: src/octoprint/templates/dialogs/settings/api.jinja2:5
-msgid "Enable"
-msgstr "사용"
-
-#: src/octoprint/templates/dialogs/settings/api.jinja2:12
 #, python-format
 msgid "Allow <a href=\"%(url)s\">Cross Origin Resource Sharing (CORS)</a>"
 msgstr "<a href=\"%(url)s\">CORS (Cross Origin Resource Sharing)</a> 허용"
@@ -4763,7 +4782,7 @@ msgstr "디스크 공간 임계값"
 msgid ""
 "If the free disk space falls below these thresholds, OctoPrint will warn "
 "the user."
-msgstr "여유 디스크 공간이 이 값들보다 낮으면 사용자에게 경고합니다."
+msgstr "여유 저장 공간이 이 값들보다 낮으면 사용자에게 경고합니다."
 
 #: src/octoprint/templates/dialogs/settings/folders.jinja2:67
 #: src/octoprint/templates/dialogs/settings/serialconnection.jinja2:76
@@ -4827,11 +4846,23 @@ msgstr "인쇄 작업을 다시 시작하기 전에"
 msgid "Before tool change"
 msgstr "노즐 교체 전"
 
-#: src/octoprint/templates/dialogs/settings/gcodescripts.jinja2:39
+#: src/octoprint/templates/dialogs/settings/gcodescripts.jinja2:41
+msgid ""
+"Anything you put here will be executed <em>before</em> any tool change "
+"commands <code>Tn</code>."
+msgstr ""
+
+#: src/octoprint/templates/dialogs/settings/gcodescripts.jinja2:45
 msgid "After tool change"
 msgstr "노즐 교체 후"
 
-#: src/octoprint/templates/dialogs/settings/gcodescripts.jinja2:45
+#: src/octoprint/templates/dialogs/settings/gcodescripts.jinja2:48
+msgid ""
+"Anything you put here will be executed <em>after</em> any tool change "
+"commands <code>Tn</code>."
+msgstr ""
+
+#: src/octoprint/templates/dialogs/settings/gcodescripts.jinja2:52
 msgid "After connection to printer is established"
 msgstr "장비 연결이 설정된 후"
 
@@ -4841,8 +4872,9 @@ msgstr "장비 연결이 끊어지기 전"
 
 #: src/octoprint/templates/dialogs/settings/gcodescripts.jinja2:61
 msgid ""
-"This will only be executed when closing the connection actively. If the "
-"connection to the printer is suddenly lost nothing will be sent."
+"Anything you put here will only be executed when closing the connection "
+"actively. If the connection to the printer is suddenly lost nothing will "
+"be sent."
 msgstr ""
 "연결을 정상적으로 끊을 때만 실행됩니다. 장비에 대한 연결이 갑자기 끊어지"
 "면 아무것도 보내지지 않습니다."
@@ -4901,8 +4933,8 @@ msgid ""
 "Serial baud rate to connect with, setting this to AUTO will make "
 "OctoPrint try to automatically find the right setting"
 msgstr ""
-"통신 속도를 사용하기 위해 이 설정을 자동으로 설정하면 OctoPrint가 자동으"
-"로 적당한 설정을 찾습니다"
+"통신 속도를 사용하기 위해 이 설정을 자동으로 설정하면 서버가 자동으로 적당"
+"한 설정을 찾습니다"
 
 #: src/octoprint/templates/dialogs/settings/serialconnection.jinja2:20
 #: src/octoprint/templates/sidebar/connection.jinja2:3
@@ -4950,7 +4982,36 @@ msgstr ""
 "<code>123456</code>와 같은 연결을 위해 목록에 추가 직렬 포트 전송 속도를 "
 "정의하는데 사용합니다. 쉼표로 구분됩니다."
 
-#: src/octoprint/templates/dialogs/settings/serialconnection.jinja2:48
+#: src/octoprint/templates/dialogs/settings/serialconnection.jinja2:49
+msgid "Request exclusive access to the serial port"
+msgstr "시리얼 포트에 대한 독점 액세스 요청"
+
+#: src/octoprint/templates/dialogs/settings/serialconnection.jinja2:50
+msgid "Uncheck this if you are having problems connecting to your printer."
+msgstr "장비 연결에 문제가있는 경우 선택을 취소하십시오."
+
+#: src/octoprint/templates/dialogs/settings/serialconnection.jinja2:55
+msgid "Apply parity double open workaround"
+msgstr ""
+
+#: src/octoprint/templates/dialogs/settings/serialconnection.jinja2:59
+#, python-format
+msgid ""
+"Use this if you are running into <a href=\"%%(url)s\" target=\"_blank\" "
+"rel=\"noopener noreferer\">this problem</a>."
+msgstr ""
+
+#: src/octoprint/templates/dialogs/settings/serialconnection.jinja2:62
+msgid "If detected as potentially needed"
+msgstr "잠재적으로 필요한 것으로 감지된 경우"
+
+#: src/octoprint/templates/dialogs/settings/serialconnection.jinja2:66
+msgid ""
+"Use this if connecting to your printer fails with <code>(22, 'Invalid "
+"argument')</code>."
+msgstr ""
+
+#: src/octoprint/templates/dialogs/settings/serialconnection.jinja2:72
 msgid "Serial logging"
 msgstr "통신 상태 로그"
 
@@ -4971,7 +5032,7 @@ msgstr ""
 msgid "Query intervals"
 msgstr "쿼리 간격"
 
-#: src/octoprint/templates/dialogs/settings/serialconnection.jinja2:62
+#: src/octoprint/templates/dialogs/settings/serialconnection.jinja2:86
 msgid ""
 "Interval in which to poll for the temperature information from the printer"
 msgstr "장비에서 온도 정보를 폴링하는 간격"
@@ -5112,7 +5173,7 @@ msgstr ""
 "로 합니다. 컨트롤러를 기다리느라 전송속도 검출에 실패할 경우 이 값을 증가"
 "시켜 보세요."
 
-#: src/octoprint/templates/dialogs/settings/serialconnection.jinja2:169
+#: src/octoprint/templates/dialogs/settings/serialconnection.jinja2:193
 msgid ""
 "Maximum consecutive communication timeouts while idle. More than this and "
 "the printer will be considered to be gone. Set to 0 to disable."
@@ -5297,32 +5358,45 @@ msgid ""
 "Try checking this if you run into connection timeouts due to your printer "
 "taking too long to respond to OctoPrint's handshake attempts on connect."
 msgstr ""
-"OctoPrint의 핸드셰이크 시도에 응답하는데 시간이 너무 오래 걸리기 때문에 연"
-"결시간 초과가 발생하면 이를 확인하십시오."
+"서버의 핸드셰이크 시도에 응답하는데 시간이 너무 오래 걸리기 때문에 연결시"
+"간 초과가 발생하면 이를 확인하십시오."
 
-#: src/octoprint/templates/dialogs/settings/serialconnection.jinja2:334
+#: src/octoprint/templates/dialogs/settings/serialconnection.jinja2:358
+msgid "Blocked commands"
+msgstr "차단된 명령"
+
+#: src/octoprint/templates/dialogs/settings/serialconnection.jinja2:361
 msgid ""
-"Do not send <code>M0</code>/<code>M1</code> commands to the firmware, "
-"only pause"
+"Use this to specify commands that should never be sent to the printer. "
+"Just the G or M code, comma separated. Defaults to <code>M0</code> and "
+"<code>M1</code> since most firmware will block until a button on the "
+"controller has been pressed if it receives either of those two commands."
 msgstr ""
-"<code>M0</code>/<code>M1</code> 커맨드를 펌웨어에 전송하지 말고 일시중지"
-"만 하세요"
 
-#: src/octoprint/templates/dialogs/settings/serialconnection.jinja2:335
+#: src/octoprint/templates/dialogs/settings/serialconnection.jinja2:365
+msgid "Pausing commands"
+msgstr "일시중지 명령"
+
+#: src/octoprint/templates/dialogs/settings/serialconnection.jinja2:368
 msgid ""
-"Most firmware will block and wait for the user to press the button on the "
-"controller when an <code>M0</code> or <code>M1</code> is received. Due to "
-"that OctoPrint will normally not send those commands to the printer and "
-"only pause any ongoing prints. If you want OctoPrint to send those "
-"commands to your printer, uncheck this option."
+"Use this to specify commands on which OctoPrint should pause the print "
+"job. Just the G or M code, comma separated. Defaults to <code>M0</code>, "
+"<code>M1</code> and <code>M25</code>."
 msgstr ""
-"대부분의 펌웨어는 <code>M0</code> 또는 <code>M1</code>이 수신되면 사용자"
-"가 컨트롤러의 버튼을 누르기를 기다리고 멈춥니다. 그렇기 때문에 일반적으로 "
-"OctoPrint는 이러한 커맨드를 프린터로 전송하지 않고 진행 중인 인쇄만 일시 "
-"중지합니다. OctoPrint에서 해당 커맨드를 프린터로 보내게 하려면 이 옵션을 "
-"선택 해제하십시오."
 
-#: src/octoprint/templates/dialogs/settings/serialconnection.jinja2:342
+#: src/octoprint/templates/dialogs/settings/serialconnection.jinja2:372
+msgid "Emergency commands"
+msgstr "긴급 명령"
+
+#: src/octoprint/templates/dialogs/settings/serialconnection.jinja2:375
+msgid ""
+"Use this to specify emergency commands which should jump any queues and - "
+"if supported by the firmware - be force sent. Just the G or M code, comma "
+"separated. Defaults to <code>M112</code>, <code>M118</code> and "
+"<code>M410</code>."
+msgstr ""
+
+#: src/octoprint/templates/dialogs/settings/serialconnection.jinja2:380
 msgid "Command to send to the firmware on first handshake attempt."
 msgstr "첫번째 핸드셰이크 시도에서 펌웨어로 보내는 명령입니다."
 
@@ -5382,7 +5456,7 @@ msgstr ""
 msgid "Error handling"
 msgstr "오류 처리"
 
-#: src/octoprint/templates/dialogs/settings/serialconnection.jinja2:371
+#: src/octoprint/templates/dialogs/settings/serialconnection.jinja2:409
 msgid ""
 "What to do on a firmware error (<code>Error:</code> or <code>!!</code>)"
 msgstr "펌웨어 오류시 수행할 작업 (<code>오류:</code> 또는 <code>!!</code>)"
@@ -5395,19 +5469,37 @@ msgstr "프린터에서 연결 끊기"
 msgid "Cancel any ongoing prints but stay connected to the printer"
 msgstr "진행중인 출력을 취소하고 프린터에 계속 연결"
 
-#: src/octoprint/templates/dialogs/settings/serialconnection.jinja2:381
+#: src/octoprint/templates/dialogs/settings/serialconnection.jinja2:416
+msgid ""
+"Please note that if you choose this, OctoPrint will still disconnect from "
+"the printer in case of <em>fatal</em> errors reported by your firmware (e."
+"g. <code>kill() called</code>, <code>fatal:</code>)."
+msgstr ""
+
+#: src/octoprint/templates/dialogs/settings/serialconnection.jinja2:420
 msgid ""
 "Only choose this if your firmware sends error messages that are not "
-"actual errors. Might mask printer issues, be careful!"
+"actual errors. Might mask printer issues (even fatal errors!), be careful!"
 msgstr ""
 "펌웨어가 실제 오류가 아닌 오류 메시지를 보내는 경우에만 이를 선택 하십시"
 "오. 장비 문제를 감출 수 있으므로 조심!"
 
-#: src/octoprint/templates/dialogs/settings/serialconnection.jinja2:390
+#: src/octoprint/templates/dialogs/settings/serialconnection.jinja2:426
+msgid "Send <code>M112</code> on disconnect due to error"
+msgstr "오류로 인해 연결 해제시 <code>M112</code>를 전송하십시오"
+
+#: src/octoprint/templates/dialogs/settings/serialconnection.jinja2:427
+msgid ""
+"If this is checked, OctoPrint will try to send an <code>M112</code> prior "
+"to a disconnect due to a (fatal) error in order to disable heaters and "
+"motors."
+msgstr ""
+
+#: src/octoprint/templates/dialogs/settings/serialconnection.jinja2:435
 msgid "Log position on pause"
 msgstr "일시 중지시 위치 로그"
 
-#: src/octoprint/templates/dialogs/settings/serialconnection.jinja2:391
+#: src/octoprint/templates/dialogs/settings/serialconnection.jinja2:436
 msgid ""
 "If you disable this, the <code>pause_position</code> placeholders in your "
 "pause/resume GCODE scripts will stay unpopulated! However, pausing speed "
@@ -5432,7 +5524,7 @@ msgstr ""
 "자를 취소 G 코드 스크립트 및 출력 복구 데이터의 해당 데이터는 채워지지 않"
 "은 상태로 유지됩니다! 그러나 취소 속도가 약간 향상될 수 있습니다."
 
-#: src/octoprint/templates/dialogs/settings/serialconnection.jinja2:405
+#: src/octoprint/templates/dialogs/settings/serialconnection.jinja2:450
 msgid ""
 "Attempt to abort any blocking heatups on cancel via <code>M108</code>."
 msgstr "<code>M108</code>로 취소할 때 가열차단 중지 시도."
@@ -5467,7 +5559,7 @@ msgstr "그래프 시간 제한"
 
 #: src/octoprint/templates/dialogs/settings/temperatures.jinja2:10
 msgid "Needs a restart of OctoPrint to become active."
-msgstr "활성 상태가 되려면 OctoPrint를 다시 시작해야합니다."
+msgstr "활성 상태가 되려면 서버를 다시 시작해야합니다."
 
 #: src/octoprint/templates/dialogs/settings/temperatures.jinja2:13
 msgid "Fine adjustments"
@@ -5494,8 +5586,8 @@ msgid ""
 "OctoPrint will use this delay to limit the number of sent temperature "
 "commands should you perform multiple fine adjustments in a short time."
 msgstr ""
-"OctoPrint는 이 지연을 사용하여 짧은 시간에 여러가지 미세조정을 수행해야 하"
-"는 온도 명령 전송의 수를 제한합니다."
+"서버는 이 지연을 사용하여 짧은 시간에 여러가지 미세조정을 수행해야 하는 온"
+"도 명령 전송의 수를 제한합니다."
 
 #: src/octoprint/templates/dialogs/settings/temperatures.jinja2:32
 msgid "Presets"
@@ -5589,7 +5681,7 @@ msgstr ""
 
 #: src/octoprint/templates/dialogs/wizard/firstrun_end.jinja2:23
 msgid "If you enjoy OctoPrint..."
-msgstr "사용을 즐기는 경우..."
+msgstr "서버 사용이 유익한 경우..."
 
 #: src/octoprint/templates/dialogs/wizard/firstrun_end.jinja2:26
 #, python-format
@@ -5677,7 +5769,7 @@ msgid "Upload locally"
 msgstr "로컬 업로드"
 
 #: src/octoprint/templates/overlays/dragndrop.jinja2:7
-#: src/octoprint/templates/sidebar/files.jinja2:68
+#: src/octoprint/templates/sidebar/files.jinja2:71
 msgid "Upload to SD"
 msgstr "SD 업로드"
 
@@ -5754,7 +5846,7 @@ msgstr "업로드 완료"
 msgid "Hash"
 msgstr "해쉬"
 
-#: src/octoprint/templates/sidebar/files.jinja2:21
+#: src/octoprint/templates/sidebar/files.jinja2:24
 msgid "Additional data"
 msgstr "추가적인 데이터"
 
@@ -5786,11 +5878,15 @@ msgstr "힌트: 이 페이지의 파일을 드래그 앤 드롭하여 업로드�
 msgid "File list settings"
 msgstr "파일 목록 설정"
 
+#: src/octoprint/templates/sidebar/files_header.jinja2:6
+msgid "Apply filters to search results"
+msgstr "검색 결과에 필터 적용"
+
 #: src/octoprint/templates/sidebar/files_header.jinja2:9
 msgid "Sort by upload date"
 msgstr "날짜별 정렬"
 
-#: src/octoprint/templates/sidebar/files_header.jinja2:12
+#: src/octoprint/templates/sidebar/files_header.jinja2:14
 msgid "Sort by Folders, Files"
 msgstr "폴더, 파일순 정렬"
 
@@ -5848,7 +5944,7 @@ msgstr "파일"
 
 #: src/octoprint/templates/sidebar/state.jinja2:4
 msgid "Upload date of the file currently selected or printing"
-msgstr ""
+msgstr "현재 출력중이거나 선택된 파일의 업로드 날짜"
 
 #: src/octoprint/templates/sidebar/state.jinja2:6
 msgid "User who selected this file for printing"
@@ -5945,8 +6041,8 @@ msgid ""
 "This information is used for manual control via the \"Control\" tab. It "
 "does NOT influence already sliced files that you upload to OctoPrint!"
 msgstr ""
-"이 정보는 \"제어\"탭을 통한 수동 제어에 사용됩니다. OctoPrint에 업로드한 "
-"슬라이스된 파일에는 영향을 주지 않습니다!"
+"이 정보는 \"제어\"탭을 통한 수동 제어에 사용됩니다. 서버에 업로드한 슬라이"
+"스된 파일에는 영향을 주지 않습니다!"
 
 #: src/octoprint/templates/snippets/settings/printerprofiles/profileEditorBuildvolume.jinja2:3
 msgid "Form Factor"
@@ -6029,9 +6125,8 @@ msgid ""
 "the GCODE Viewer and/or when slicing from OctoPrint. It does NOT "
 "influence already sliced files that you upload to OctoPrint!"
 msgstr ""
-"이 정보는 온도탭, 테두리 상자 검사, G 코드 뷰어 및 / 또는 OctoPrint에서 분"
-"할할 때 사용됩니다. OctoPrint에 업로드 한 슬라이스된 파일에는 영향을주지 "
-"않습니다!"
+"이 정보는 온도탭, 경계 상자 검사, G 코드 뷰어 또는 서버에서 분할할 때 사용"
+"됩니다. 서버에 업로드 한 슬라이스된 파일에는 영향을주지 않습니다!"
 
 #: src/octoprint/templates/snippets/settings/printerprofiles/profileEditorExtruder.jinja2:4
 msgid "Nozzle Diameter"
@@ -6074,9 +6169,9 @@ msgid ""
 "OctoPrint. It does NOT influence already sliced files that you upload to "
 "OctoPrint!"
 msgstr ""
-"이 정보는 \"온도\" 탭, G 코드 뷰어 및 OctoPrint에서 슬라이스할 때 사용할 "
-"수 있는 그래프 및 컨트롤에 사용됩니다. OctoPrint에 업로드 한 슬라이스된 파"
-"일에는 영향을 주지 않습니다!"
+"이 정보는 \"온도\" 탭, G 코드 뷰어 및 서버에서 슬라이스할 때 사용할 수 있"
+"는 그래프 및 컨트롤에 사용됩니다. 서버에 업로드 한 슬라이스된 파일에는 영"
+"향을 주지 않습니다!"
 
 #: src/octoprint/templates/snippets/settings/printerprofiles/profileEditorGeneral.jinja2:6
 msgid "Name must be set"
@@ -6609,7 +6704,7 @@ msgstr "미세조정: +1°C"
 msgid "Set"
 msgstr "설정"
 
-#: src/octoprint/templates/tabs/temperature.jinja2:56
+#: src/octoprint/templates/tabs/temperature.jinja2:57
 msgid "Change Offset"
 msgstr "오프셋 변경"
 
