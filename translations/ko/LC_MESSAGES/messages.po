@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: StellaRasPrint\n"
 "Report-Msgid-Bugs-To: i18n@octoprint.org\n"
 "POT-Creation-Date: 2018-07-25 13:37+0200\n"
-"PO-Revision-Date: 2019-11-18 13:20+0900\n"
+"PO-Revision-Date: 2019-11-18 13:56+0900\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -1185,6 +1185,10 @@ msgid ""
 "p><p><small>You can find more information on error reporting under "
 "Settings > Error Tracking</small></p>"
 msgstr ""
+"<p>서버 RC 릴리스 채널을 추적하는 것처럼 보입니다. RC에서 발생하는 모든 종"
+"류의 오류를 보다 쉽게 살펴볼 수 있도록 오류 보고를 사용하도록 설정하면 좋"
+"을 것입니다. 감사합니다!</p><p><small>설정 > 오류 보고에서 자세한 내용을 "
+"찾을 수 있습니다 .</small></p>"
 
 #: src/octoprint/plugins/errortracking/static/js/errortracking.js:46
 #: src/octoprint/plugins/softwareupdate/static/js/softwareupdate.js:284
@@ -2214,7 +2218,7 @@ msgstr "다음 구성 요소에 사용할 수 있는 업데이트가 있습니�
 msgid "Release Notes"
 msgstr "릴리즈노트"
 
-#: src/octoprint/plugins/softwareupdate/static/js/softwareupdate.js:251
+#: src/octoprint/plugins/softwareupdate/static/js/softwareupdate.js:260
 msgid ""
 "This version of the Python environment is not supported for direct "
 "updates."
@@ -2541,6 +2545,20 @@ msgid ""
 "        wrong and to get hints on how to solve the problem.\n"
 "    </p>\n"
 msgstr ""
+"\n"
+"<p>\n"
+"        <strong>서버는 제한된 시스템에서 실행되고 업데이트가 비활성화됩니"
+"다.</strong>\n"
+"    </p>\n"
+"    <p>\n"
+"        제한되어 불안정할 수 있는 시스템에서 업데이트 문제가 발생할 가능성"
+"을 줄이기 위해\n"
+"        서버는 이러한 조건에서 업데이트를 지원하지 않습니다. 현재 문제를 "
+"해결하십시오.\n"
+"        업데이트하기 전에 탐색 모음에 표시된 경고를 살펴보고 무엇이 문제인"
+"지 알아보십시오.\n"
+"        문제를 해결하는 방법에 대한 힌트를 얻을 수 있습니다.\n"
+"</p>\n"
 
 #: src/octoprint/plugins/softwareupdate/templates/softwareupdate_settings.jinja2:46
 msgid ""
@@ -5382,6 +5400,10 @@ msgid ""
 "<code>M1</code> since most firmware will block until a button on the "
 "controller has been pressed if it receives either of those two commands."
 msgstr ""
+"장비로 전송해서는 안되는 명령을 지정하려면 이 명령을 사용합니다. G 또는 M "
+"코드, 쉼표로 분리합니다. 기본적으로 <code>M0</code>과<code>M1</code> 대부"
+"분의 펌웨어가 이러한 두 명령 중 하나를 수신하는 경우 컨트롤러의 버튼을 누"
+"를때까지 차단됩니다."
 
 #: src/octoprint/templates/dialogs/settings/serialconnection.jinja2:365
 msgid "Pausing commands"
@@ -5507,6 +5529,8 @@ msgid ""
 "to a disconnect due to a (fatal) error in order to disable heaters and "
 "motors."
 msgstr ""
+"이 옵션을 선택하면 서버는 히터와 모터를 비활성화하기 위해 (치명적인) 오류"
+"로 인해 연결을 끊기 전에 <code>M112</code> 전송을 시도합니다."
 
 #: src/octoprint/templates/dialogs/settings/serialconnection.jinja2:435
 msgid "Log position on pause"
@@ -6661,7 +6685,7 @@ msgstr ""
 "고려할 수 있으므로 부정확할 수 있다는 점에 유의하세요.\n"
 "    "
 
-#: src/octoprint/templates/tabs/gcodeviewer.jinja2:115
+#: src/octoprint/templates/tabs/gcodeviewer.jinja2:118
 msgid ""
 "<p>\n"
 "        You've selected <strong data-bind=\"text: selectedFile.name\"></"
@@ -6688,7 +6712,7 @@ msgstr ""
 "        그래도 이 파일을 시각화 하시겠습니까?\n"
 "    </p>"
 
-#: src/octoprint/templates/tabs/gcodeviewer.jinja2:126
+#: src/octoprint/templates/tabs/gcodeviewer.jinja2:129
 #, python-format
 msgid "Yes, please visualize %(name)s regardless of its size"
 msgstr "예, 크기에 관계없이 %(name)s를 시각화하십시오"
@@ -6787,7 +6811,7 @@ msgstr ""
 "다. 강제로 다시 표시할 수 있지만 브라우저가 응답하지 않을 수 있음을 알고 "
 "있어야 합니다."
 
-#: src/octoprint/templates/tabs/timelapse.jinja2:3
+#: src/octoprint/templates/tabs/timelapse.jinja2:4
 msgid ""
 "Take note that timelapse configuration is disabled while your printer is "
 "printing."
