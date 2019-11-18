@@ -1066,12 +1066,14 @@ $(function() {
             if (enable) {
                 $(document).bind("dragenter", self._handleDragEnter);
                 $(document).bind("dragleave", self._handleDragLeave);
-                $(document).bind("dragover", self._handleDragOver);
+                // STELLAMOVE
+//                $(document).bind("dragover", self._handleDragOver);
                 log.debug("Enabled drag-n-drop");
             } else {
                 $(document).unbind("dragenter", self._handleDragEnter);
                 $(document).unbind("dragleave", self._handleDragLeave);
-                $(document).unbind("dragover", self._handleDragOver);
+                // STELLAMOVE
+//                $(document).unbind("dragover", self._handleDragOver);
                 log.debug("Disabled drag-n-drop");
             }
         };
@@ -1147,8 +1149,9 @@ $(function() {
         };
 
         self._dragNDropTarget = null;
-        self._dragNDropFFTimeout = undefined;
-        self._dragNDropFFTimeoutDelay = 100;
+        // STELLAMOVE
+//        self._dragNDropFFTimeout = undefined;
+//        self._dragNDropFFTimeoutDelay = 100;
         self._forceEndDragNDrop = function () {
             self.dropOverlay.removeClass("in");
             if (self.dropZoneLocal) self.dropZoneLocalBackground.removeClass("hover");
@@ -1162,6 +1165,8 @@ $(function() {
             self._forceEndDragNDrop();
         };
 
+// STELLAMOVE
+/*
         self._handleDragOver = function(e) {
             // Workaround for Firefox
             //
@@ -1188,7 +1193,7 @@ $(function() {
                 self._dragNDropFFTimeout = undefined;
             }, self._dragNDropFFTimeoutDelay);
         };
-
+*/
         self._handleDragEnter = function (e) {
             self.dropOverlay.addClass('in');
 
@@ -1224,7 +1229,8 @@ $(function() {
                 if (self.dropZoneBackground) self.dropZoneBackground.removeClass("hover");
             }
             self._dragNDropTarget = e.target;
-            self._dragNDropLastOver = Date.now();
+            // STELLAMOVE
+//            self._dragNDropLastOver = Date.now();
         }
     }
 
